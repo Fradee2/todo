@@ -13,7 +13,11 @@ button.onclick=function(){
     }
 function deletes(obj){
     let a=obj.parentNode.id;
-    a.remuve();
-    
-
+    console.log(a);
+    main_footer.parentNode.removeChild(a);
 }
+function delete_all(){
+    let a=main_footer.firstElementChild;
+    console.log(a);
+}
+

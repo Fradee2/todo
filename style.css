@@ -1,8 +1,16 @@
 body{
     background: #FAF0D1;
 }
+.main{
+    display: block;
+}
 .title{
+    display: block;
     color:red;
     opacity: 0.5;
 }
-#
+.main_activity{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

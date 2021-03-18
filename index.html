@@ -8,8 +8,14 @@
 <body>
     <div class="main">
         <h1 class="title">todos</h1>
-        <div class="toDo"><input class="toDo_input" id="input_value" type="text" value="gfg"></div>
-        <button class="toDo_button" id="button"></button>
+        <div class="toDo"><input class="toDo_input" id="input_value" type="text"></div>
+        <button class="toDo_button" id="button">добавить</button>
+        <div class="main_activity">
+            <button id="delete_all" onclick="delete_all()">Удалить все</button>
+            <button id="filter_ready"></button>
+            <button id="filter_processing"></button>
+            <button id="filter_all"></button>
+        </div>
         <div class="main_footer" id="main_footer"></div>
     </div>
     <script src="script.js"></script>
