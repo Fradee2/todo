@@ -78,9 +78,7 @@ function filter_gotovo(){
     for (let r=0; r<=i; r++){
         if(tasks[r].class_name=="gotovo"){
                 main_footer.insertAdjacentHTML('afterbegin',`<div class="${tasks[r].class_name}" id="processing${r}"><p>${tasks[r].task}</p><button id="${r}" onclick="gotovo(this)" >Выполнена</button><button onClick="delet(this)" id="delete${r}">Удалить</button></>`);
-        }else
-
-            break;
+        }
 
     }
 }

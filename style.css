@@ -1,5 +1,5 @@
 body{
-    background: #ededed;
+    background: #525252;
 
     font-family: 'Montserrat', sans-serif;
 }
@@ -16,12 +16,13 @@ input{
 }
 .main{
     display: block;
-    min-height:500px ;
+    min-height: 1000px;
+    background: #ededed;
 }
 button{
     text-decoration: none;
     display: inline-block;
-
+    margin: 10px;
     font-size: 15px;
     border-radius: 10px;
     font-weight: 100;
@@ -67,11 +68,3 @@ button{
     color: rgb(39, 10, 10);
     
 }
- button{
-     margin: 10px;
- }
-
- .body{
-     min-height: 500px;
-     border: rgb(79, 78, 78) 1px solid;
- }
