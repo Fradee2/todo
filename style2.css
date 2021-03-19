@@ -2,13 +2,13 @@ body{
     padding: 0;
     margin: 0;
     background: rgb(242, 242, 242);
-    font-family: 'Montserrat';
+    font-family: 'Montserrat', sans;
 }
 main{
     background: #fff;
     display: inline-block;
     position: absolute;
-    left:30%;
+    left:40%;
 }
 
 .header_title{
@@ -35,8 +35,17 @@ input{
     border-radius: 50%;
     width: 40px;
     font-size: 30px;
-    color:lightgray;
+    color:green;
 }
+.task_uncomplite{
+    border:rgb(181, 181, 181);
+    background-color: #fff;
+    border-radius: 50%;
+    width: 40px;
+    font-size: 30px;
+    color: lightgray;
+}
+
 .activity_buttons{
     
     display: flex;
@@ -53,6 +62,8 @@ input{
 .counter{
     margin-left: 10px;
     color:rgb(141, 141, 141);
+    margin: 5px;
+    font-size: 12px;
 }
 .filter_button{
     color:rgb(141, 141, 141);
@@ -65,9 +76,11 @@ input{
     border-radius: 2px;
 }
 
-.task_item{
+.tasks_item{
     display: flex;
     justify-content: start;
+    align-items: center;
+    border:1px solid rgb(196, 196, 196);
 }
 
 .complete{
@@ -77,4 +90,17 @@ input{
 .uncomplete{
     color:black;
     text-decoration: none;
+}
+.task_add{
+    outline: none;
+    border: none;
+    background-color: #fff;
+    width: 40px;
+    font-size: 30px;
+    color:lightgray;
+}
+button, 
+button:active, 
+button:focus {
+    outline: none;
 }
