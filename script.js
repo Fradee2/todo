@@ -1,23 +1,80 @@
-let i=0
-let task={};
+let i=0;
+let tasks=[];
 let main_footer = document.getElementById('main_footer');
-button.onclick=function(){
-    let input_value = document.getElementById("input_value").value;
-    id="${i}"
-    main_footer.insertAdjacentHTML('afterend', `<div id="${i}"><p id="main_footer__name ">${input_value}</p><button onClick="deletes(this)"  id="button_delete${i}" ></button></div>`);
-    i++;
-    // task={
-    //     task:input_value,
-    //     performed:false,
-    // }
+let button_create=document.getElementById('button');
+let button_delete;
+
+button_create.onclick=function(){
+    let value=document.getElementById("input_value").value;
+    if(i>0){
+        for(let r=1;r!=tasks.length;r++){
+            if (tasks[r]==undefined){
+                main_footer.insertAdjacentHTML('afterbegin',`<div class="ne_gotovo" id="processing${r}"><p>${value}</p><button id="${r}" onclick="gotovo(this)" >Выполнена</button><button onClick="delet(this)" id="delete${r}">Удалить</button></>`);
+                break;
+            }
+        }
+    }else{
+    main_footer.insertAdjacentHTML('afterbegin',`<div class="ne_gotovo" id="processing${i}"><p>${value}</p><button id="${i}" onclick="gotovo(this)" >Выполнена</button><button onClick="delet(this)" id="delete${i}">Удалить</button></>`);
     }
-function deletes(obj){
-    let a=obj.parentNode.id;
-    console.log(a);
-    main_footer.parentNode.removeChild(a);
-}
-function delete_all(){
-    let a=main_footer.firstElementChild;
-    console.log(a);
+    tasks[i]={task:value,
+        class_name:"ne_gotovo"};
+
+    i++;
 }
 
+function delet(obj){ //удаление одной задачи 
+     let a=obj.parentNode;
+     let b=obj.previousSibling.id;
+     a.remove();
+     delete tasks[b];
+}
+
+
+function gotovo(obj){ //готово/не готово
+    let r=obj.id;
+    let a=obj.parentNode.id;
+    if (tasks[r].class_name=="gotovo"){
+        document.getElementById(a).className="ne_gotovo";
+        tasks[r].class_name="ne_gotovo";
+    } else {
+        document.getElementById(a).className="gotovo";
+        tasks[r].class_name="gotovo";
+    }
+}
+
+function delete_all(){
+    let a=document.getElementById('main_footer');
+    a.innerHTML="";
+}
+
+function delete_alll() { //удаляет все элементы хронящиеся в main_footer
+delete_all();
+  for (let r=0;r!=i;r++){
+    delete tasks[r];
+  }
+}
+
+function filter_all(){
+    delete_all();
+    for (let r=0; r!=i; r++){
+        main_footer.insertAdjacentHTML('afterbegin',`<div class="${tasks[r].class_name}" id="processing${r}"><p>${tasks[r].task}</p><button id="${r}" onclick="gotovo(this)" >Выполнена</button><button onClick="delet(this)" id="delete${r}">Удалить</button></>`);
+    }
+}
+
+function filter_ne_gotovo(){
+    delete_all();
+    for (let r=0; r!=i; r++){
+        if(tasks[r].class_name=="ne_gotovo"){
+                main_footer.insertAdjacentHTML('afterbegin',`<div class="${tasks[r].class_name}" id="processing${r}"><p>${tasks[r].task}</p><button id="${r}" onclick="gotovo(this)" >Выполнена</button><button onClick="delet(this)" id="delete${r}">Удалить</button></>`);
+        }
+    }
+}
+
+function filter_gotovo(){
+    delete_all();
+    for (let r=0; r!=i; r++){
+        if(tasks[r].class_name=="gotovo"){
+                main_footer.insertAdjacentHTML('afterbegin',`<div class="${tasks[r].class_name}" id="processing${r}"><p>${tasks[r].task}</p><button id="${r}" onclick="gotovo(this)" >Выполнена</button><button onClick="delet(this)" id="delete${r}">Удалить</button></>`);
+        }
+    }
+}
