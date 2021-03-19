@@ -1,0 +1,80 @@
+body{
+    padding: 0;
+    margin: 0;
+    background: rgb(242, 242, 242);
+    font-family: 'Montserrat';
+}
+main{
+    background: #fff;
+    display: inline-block;
+    position: absolute;
+    left:30%;
+}
+
+.header_title{
+    text-align: center;
+    font-weight: 10;
+    font-size: 60px;
+    color:red;
+    opacity: 0.3;
+}
+.task{
+display: flex;
+box-shadow: 0px 0px 5px rgb(181, 181, 181);
+
+}
+input{
+    width: 400px;
+    outline: none;
+    border: none;
+    font-size: 30px;
+}
+.task_complite{
+    border:rgb(181, 181, 181);
+    background-color: #fff;
+    border-radius: 50%;
+    width: 40px;
+    font-size: 30px;
+    color:lightgray;
+}
+.activity_buttons{
+    
+    display: flex;
+    border:1px solid rgb(194, 194, 194);
+    justify-content: space-between;
+    align-items: center;
+}
+.clear_all{
+    color:rgb(141, 141, 141);
+    outline: none;
+    border: none;
+    background: #FFF;
+}
+.counter{
+    margin-left: 10px;
+    color:rgb(141, 141, 141);
+}
+.filter_button{
+    color:rgb(141, 141, 141);
+    background: #fff;
+    border: none;
+    outline: none;
+}
+.active{
+    border:1px solid rgb(196, 196, 196);
+    border-radius: 2px;
+}
+
+.task_item{
+    display: flex;
+    justify-content: start;
+}
+
+.complete{
+    text-decoration:line-through ;
+    color:lightgray;
+}
+.uncomplete{
+    color:black;
+    text-decoration: none;
+}
