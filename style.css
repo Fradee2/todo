@@ -1,5 +1,7 @@
 body{
-    background: #FAF0D1;
+    background: #ededed;
+
+    font-family: 'Montserrat', sans-serif;
 }
 .main_main{
     display: flex;
@@ -9,18 +11,32 @@ body{
 input{
     margin: 20px;
     margin-bottom: 10px;
+    min-width: 400px;
+    font-size: 24px;
 }
 .main{
     display: block;
+    min-height:500px ;
+}
+button{
+    text-decoration: none;
+    display: inline-block;
+
+    font-size: 15px;
+    border-radius: 10px;
+    font-weight: 100;
+    box-shadow: 0 1px 5px 0 rgba(0, 40, 120, .35);
+    outline: none;
 }
 .todo_button{
     margin-left: 30px;
 }
 .title{
     color:red;
-    opacity: 0.5;
-    margin-left: 50%;
-    margin-right: 50%;
+    opacity: 0.3;
+    text-align: center;
+    font-size: 60px;
+    font-weight: 100;
 }
 .main_activity{
     display: flex;
@@ -28,15 +44,34 @@ input{
     align-items: center;
 }
 .ne_gotovo{
-    background: lightgrey;
+    background: rgb(225, 225, 225);
     font-size: 20px;
-
+    text-align: center;
 }
 
+.toDo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
 .gotovo{
     background: lightgreen;
     text-decoration: line-through;
     font-size: 20px;
+    text-align: center;
 }
 
+.text{
+    text-align: center;
+    color: rgb(39, 10, 10);
+    
+}
+ button{
+     margin: 10px;
+ }
+
+ .body{
+     min-height: 500px;
+     border: rgb(79, 78, 78) 1px solid;
+ }
