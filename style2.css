@@ -104,3 +104,7 @@ button:active,
 button:focus {
     outline: none;
 }
+
+.clr{
+    display: none;
+}
