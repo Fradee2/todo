@@ -29,7 +29,7 @@ input{
     border: none;
     font-size: 30px;
 }
-.task_complite{
+.task_complete{
     border:rgb(181, 181, 181);
     background-color: #fff;
     border-radius: 50%;
@@ -37,7 +37,7 @@ input{
     font-size: 30px;
     color:green;
 }
-.task_uncomplite{
+.task_uncomplete{
     border:rgb(181, 181, 181);
     background-color: #fff;
     border-radius: 50%;
