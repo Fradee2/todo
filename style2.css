@@ -13,10 +13,12 @@ main{
 
 .header_title{
     text-align: center;
+
     font-weight: 10;
     font-size: 60px;
     color:red;
     opacity: 0.3;
+    
 }
 .task{
 display: flex;
@@ -29,6 +31,11 @@ input{
     border: none;
     font-size: 30px;
 }
+
+input::-webkit-input-placeholder { 
+    color: rgb(238, 238, 238); 
+}
+
 .task_complete{
     border:rgb(181, 181, 181);
     background-color: #fff;

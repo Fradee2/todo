@@ -1,5 +1,7 @@
 let $input=document.querySelector('#input');
 let $container = document.querySelector('#tasks');
+let $counter = document.querySelector('#counter');
+let counter_number=0;
 const addNewTask = (text) => `            <div class="tasks_item"  data-checked="false">
                 <button data-action="toggleComplete" class="task_uncomplete">✔</button>
                 <p class="uncomplete">${text}</p>
@@ -35,37 +37,35 @@ const Unchecked = (parent)=>{
 	 const isChecked = perentContainer.dataset.checked==='true';
 	if (isChecked){
 		Unchecked(perentContainer);
+		counter_number++;
+		$counter.textContent = `${counter_number} item left`;
 	}else{
 		Checked(perentContainer);
+		counter_number--;
+		$counter.textContent = `${counter_number} item left`;
 	}
 }
 
 const delClass=()=>{
-	const $filter_all = document.querySelector('#filter_all').classlist;
-	const $filter_active = document.querySelector('#filter_active').classList;
-	const $filter_completed = document.querySelector('#filter_completed').classList;
-	if ($filter_all =='active'){
-
-		$filter_all.remove('active');
-		$filter_active.remove('active');
-	}
-	if ($filter_active =='active'){
-		$filter_active.remove('active');
-	}else{
-		$filter_completed.remove('active');
-		$filter_active.remove('active');
-	}
+	const filter_all = document.querySelector('#filter_all').classList;
+	const filter_active = document.querySelector('#filter_active').classList;
+	const filter_completed = document.querySelector('#filter_completed').classList;
+	filter_all.toggle('active',false);
+	filter_active.toggle('active', false);
+	filter_completed.toggle('active', false);
 }
 
 const filter=(target,button)=>{
 	delClass();
 	button.classList.add('active')
 	let element = $container.children;
-	console.log(element[1]);
-	for (let i=1; i<=element.length;i++){
-		if (element[i].dataset.checked===target){
-			
-		}else;
+	for (let i=0; i<element.length;i++){
+		if (element[i].dataset.checked!=target){
+			element[i].classList.toggle('clr',true);
+		}else{
+			element[i].classList.toggle('clr', false);
+		}
+		;
 	}
 }
 
@@ -79,7 +79,10 @@ document.addEventListener('click',e=>{
 			} else if (target.dataset.filter == 'all'){
 				delClass();
 				target.classList.add('active')
-
+				let element = $container.children;
+				for (let i = 0; i < element.length; i++) {
+						element[i].classList.toggle('clr', false);
+				}
 			}else if(target.dataset.filter =='active'){
 				filter('true',target);
 			}
@@ -90,6 +93,14 @@ document.addEventListener('click',e=>{
 			break;
 		}
 		case ACTION.CLEAR_COMPLETED:{
+			let element = $container.children;
+			for (let i = 0; i < element.length; i++) {
+				if (element[i].dataset.checked == 'true') {
+					console.log(element[i]);
+					element[i].innerHTML=" ";
+					element[i].remove();
+				}
+			}
 			break;
 		}
 	}
@@ -102,6 +113,9 @@ $input.addEventListener('keydown', (e)=>{
 	 if (isEnterPressed && value){
 		 $container.insertAdjacentHTML("afterbegin",newTodo_element);
 		 $input.value="";
+		 counter_number++;
+		 $counter.textContent = `${counter_number} item left`;
 	 }
+	 
 })
 

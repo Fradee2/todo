@@ -19,17 +19,9 @@
             <input id="input" type="text" placeholder="What needs to be done?">
         </div>
         <div class="tasks" id="tasks">
-            <div class="tasks_item"  data-checked='true'>
-                <button data-action="toggleComplete" class="task_complete">✔</button>  
-                <p class="complete">sdfsdf</p>
-            </div>
-            <div class="tasks_item"  data-checked="false">
-                <button data-action="toggleComplete" class="task_uncomplete">✔</button>  
-                <p class="uncomplete">sdfsdf</p>
-            </div>
         </div>
         <div class="activity_buttons">
-            <p class="counter">4 items left</p>
+            <p class="counter" id="counter">0 items left</p>
             <div class="filter">
                 <button data-action="filter" data-filter="all" class="filter_button  active" id="filter_all">All</button>
                 <button data-action="filter" data-filter="active" class="filter_button" id="filter_active">Active</button>
